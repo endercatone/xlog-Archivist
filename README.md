@@ -1,10 +1,10 @@
 # xlog-Archivist
 
-xlog-Archivist 是[xLog-ArticleURLCrawler](https://github.com/endercatone/xLog-ArticleURLCrawler)的改进版本，它不仅可以爬取URL，还能爬取内容、创作日期等信息并以json格式分别将每篇文章保存到对应的json文件中，所有文章URL都会保存到url.txt。
+xlog-Archivist 是[xLog-ArticleURLCrawler](https://github.com/endercatone/xLog-ArticleURLCrawler)的改进版本，它不仅可以爬取URL，还能爬取内容、创作日期等信息并以json格式分别将每篇文章保存到对应的文件中，所有文章URL都会保存到url.txt。
 
-![image-20230520231829638](https://article.biliimg.com/bfs/article/7575458a96d694222abadd0abbde30fb22fafeb2.png)
+![image-20230521021418044](https://article.biliimg.com/bfs/article/165c7fcffeb4ea777556d8d5e6a71e1ba747ad8c.png)
 
-制作这个程序的目的是为了更方便地将xlog博客上的文章添加到知识库中。
+制作这个程序的目的是为了更方便地将xlog博客上的文章添加到知识库中。由于Fast GPT不支持json文件，故使用txt文件后缀。由于国内网络原因，建议挂梯子使用。
 
 > [在博客上嵌入可以读取文章的ChatGPT](https://endercat.xlog.app/zai-bo-ke-shang-qian-ru-ke-yi-du-qu-wen-zhang-de-chatgpt) 
 

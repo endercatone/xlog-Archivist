@@ -28,7 +28,10 @@ else:
     print("已从配置文件中读取 URL:", blog_url)
 
 #删除上一次产生url.txt
-os.remove("articles/url.txt")
+if os.path.exists("articles/url.txt"):
+    os.remove("articles/url.txt")
+else:
+    pass
 
 # 获取博客的 JSON 数据
 json_data = fetch_article_data(blog_url)
