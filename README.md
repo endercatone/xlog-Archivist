@@ -8,6 +8,8 @@ xlog-Archivist 是[xLog-ArticleURLCrawler](https://github.com/endercatone/xLog-A
 
 > [在博客上嵌入可以读取文章的ChatGPT](https://endercat.xlog.app/zai-bo-ke-shang-qian-ru-ke-yi-du-qu-wen-zhang-de-chatgpt) 
 
+*本程序使用ChatGPT协助编写*
+
 
 
 # 使用方法
@@ -40,7 +42,7 @@ xlog-Archivist 是[xLog-ArticleURLCrawler](https://github.com/endercatone/xLog-A
    文章保存成功：免费给Telegram机器人接入GPT-4
    文章保存成功：通过CSS修改文字文章保存成功：Chirper - AI的社区，禁止人类进入文章保存成功：在博客上使用黑条字文章保存成功：使用Python脚本检测OpenAi额度和模型文章保存成功：分享一些OpenAi API KEY
    文章保存成功：更简单地为Arch linux或其衍生系统更换更快的镜像源文章保存成功：免费领取二级域名,使用ClouDNS!
-   所有文章保存成功！
+   所有文章保存完毕！
    ```
 
 4. 在`articles`目录找到文章的json文件

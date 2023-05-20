@@ -1,11 +1,31 @@
 import os
 import threading
+import configparser
 from fetcher import fetch_article_data
 from saver import save_article_data
 from extractor import extract_article_info
 
-# 用户输入博客的 URL
-blog_url = input("请输入博客的 URL：")
+# 创建配置文件对象
+config = configparser.ConfigParser()
+
+# 检查是否是第一次使用
+if not os.path.exists('config.ini'):
+    # 第一次使用，要求用户输入博客的 URL
+    blog_url = input("请输入博客的 URL：")
+
+    # 创建配置文件
+    config['Blog'] = {'URL': blog_url}
+
+    # 保存配置文件
+    with open('config.ini', 'w') as configfile:
+        config.write(configfile)
+else:
+    # 读取配置文件
+    config.read('config.ini')
+
+    # 获取博客的 URL
+    blog_url = config.get('Blog', 'URL')
+    print("已从配置文件中读取URL:",blog_url)
 
 # 获取博客的 JSON 数据
 json_data = fetch_article_data(blog_url)
@@ -33,6 +53,6 @@ if json_data:
     for thread in threads:
         thread.join()
 
-    print("所有文章保存成功！")
+    print("所有文章保存完毕！")
 else:
-    print("无法获取博客数据，请检查博客的 URL 是否正确。")
+    print("无法获取博客数据。")
