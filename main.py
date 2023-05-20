@@ -2,7 +2,7 @@ import os
 import threading
 import configparser
 from fetcher import fetch_article_data
-from saver import save_article_data
+from saver import save_article_data, save_article_url
 from extractor import extract_article_info
 
 # 创建配置文件对象
@@ -25,7 +25,10 @@ else:
 
     # 获取博客的 URL
     blog_url = config.get('Blog', 'URL')
-    print("已从配置文件中读取URL:",blog_url)
+    print("已从配置文件中读取 URL:", blog_url)
+
+#删除上一次产生url.txt
+os.remove("articles/url.txt")
 
 # 获取博客的 JSON 数据
 json_data = fetch_article_data(blog_url)
@@ -36,11 +39,22 @@ if not os.path.exists(save_directory):
     os.makedirs(save_directory)
 
 # 定义保存文章的函数
+# 创建一个线程锁
+url_lock = threading.Lock()
+
 def save_article(article):
     article_info = extract_article_info(article)
     title = article_info["title"]
     save_article_data(title, article_info, save_directory)
+    save_article_url(title, article_info["url"], save_directory)  # 添加保存文章真实 URL 的调用
     print(f"文章保存成功：{title}")
+
+    # 在url.txt文件中保存文章名和URL
+    with url_lock:
+        with open("url.txt", "a") as url_file:
+            url_file.write(f"{title}: {article_info['url']}\n")
+
+
 
 if json_data:
     threads = []

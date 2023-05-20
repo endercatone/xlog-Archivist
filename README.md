@@ -1,6 +1,6 @@
 # xlog-Archivist
 
-xlog-Archivist 是[xLog-ArticleURLCrawler](https://github.com/endercatone/xLog-ArticleURLCrawler)的改进版本，它不仅可以爬取URL，还能爬取内容、创作日期等信息并以json格式分别将每篇文章保存到对应的json文件中。
+xlog-Archivist 是[xLog-ArticleURLCrawler](https://github.com/endercatone/xLog-ArticleURLCrawler)的改进版本，它不仅可以爬取URL，还能爬取内容、创作日期等信息并以json格式分别将每篇文章保存到对应的json文件中，所有文章URL都会保存到url.txt。
 
 ![image-20230520231829638](https://article.biliimg.com/bfs/article/7575458a96d694222abadd0abbde30fb22fafeb2.png)
 
